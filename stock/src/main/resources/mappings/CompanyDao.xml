@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bimt.thesisquery.dao.CompanyDao">
+	<resultMap id="authorMap" type="com.bimt.thesisquery.model.CompanyModel">
+		<result column="code" property="code" jdbcType="VARCHAR" />
+		<result column="name" property="name" jdbcType="VARCHAR" />
+		<result column="market" property="market" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<insert id="insert" parameterType="com.bimt.thesisquery.model.CompanyModel" >
+    insert into s_company (code, name, market)
+    values (#{code,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{market,jdbcType=VARCHAR}
+      )
+  </insert>
+
+</mapper>
